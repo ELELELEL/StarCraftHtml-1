@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>StarCraft</title>
+		
+		<script>
+		var wasi=0
+		var jinti=0
+		var dianji=999
+		var scv=0
+		var wasiscv=0
+		var kuangrezhe=0
+		var zhuiliezhe=0
+		</script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs
+/jquery/1.4.0/jquery.min.js"></script>
+    </head>
+    <body>
+	<div id="divx">机械臂：0</div>
+	<div id="div0">战斗力：0</div>
+	<div id="div1">晶体矿：0</div>
+	<div id="div2">瓦斯气体：0</div>
+	<div id="div3">晶体探机数量：0</div>
+	<div id="div4">瓦斯探机数量：0</div>
+	<div id="div5">狂热者数量：0</div>
+	<div id="div6">追猎者数量：0</div>
+	<script>
+	function one() {
+	var a=true
+		if (a==true)
+		{
+		jinti=jinti+dianji;
+		window.div1.innerText="晶体矿："+jinti;
+		}
+}
+	</script>
+	<script>
+	function two() {
+	var b=true
+		if (b==true)
+		{
+		wasi=wasi+dianji;
+		window.div2.innerText="瓦斯气体："+wasi;
+		}
+}
+	</script>
+	<script>
+	setInterval(	function() 
+	{ 
+	jinti=jinti+scv;
+	window.div1.innerText="晶体矿："+jinti;
+	} , 1000);
+	</script>
+		<script>
+	function scvscv() {
+	if (jinti>=50)
+	{
+	jinti=jinti-50;
+	scv=scv+1;
+	window.div3.innerText="晶体探机数量："+scv;
+	}
+	}
+	</script>
+			<script>
+	function scvscvscv() {
+	if (jinti>=50)
+	{
+	jinti=jinti-50;
+	wasiscv=wasiscv+1;
+	window.div4.innerText="瓦斯探机数量："+wasiscv;
+	}
+	}
+	</script>
+		<script>
+	setInterval(	function() 
+	{ 
+	wasi=wasi+wasiscv;
+	window.div2.innerText="瓦斯气体："+wasi;
+	} , 1000);
+	</script>
+<script>
+	function kuangre() {
+	if (jinti>=100)
+	{
+	jinti=jinti-100;
+	kuangrezhe=kuangrezhe+1;
+	window.div5.innerText=" 狂热者数量："+kuangrezhe;
+	zhandou();
+	}
+	}
+	</script>
+			<script>
+	function zhandou() 
+	{ 
+	var lingdi=kuangrezhe+zhuiliezhe*2;
+	window.div0.innerText="战斗力："+lingdi;
+	}
+	</script>
+	<script>
+	function zhuilie() {
+	if (jinti>=125&&wasi>=50)
+	{
+	jinti=jinti-125;
+	zhuiliezhe=zhuiliezhe+1;
+	wasi=wasi-50
+	window.div6.innerText=" 追猎者数量："+zhuiliezhe;
+	zhandou();
+	}
+	}
+	</script>
+	<script>
+	function jixiebi() {
+	if (jinti>=100,wasi>=100)
+	{
+	jinti=jinti-100;
+	dianji=dianji+1;
+	wasi=wasi-100
+	window.divx.innerText=" 机械臂："+dianji;
+	}
+	}
+	</script>
+	<pre>          <input type="button" onclick="two()" value="【采集】
+瓦斯气体"/>                     <input type="button" width="200" onclick="one()" value="【采集】
+晶体矿"/></pre>
+	<pre>          <input type="button" onclick="scvscv()" value="建造一个
+晶体探机
+（50晶体）"/> <input type="button" style="width:135;height:135;" onclick="jixiebi()" value="升级机械臂
+（100晶体+100瓦斯）"/> <input type="button" onclick="scvscvscv()" value="建造一个
+瓦斯探机
+（50晶体）"/></pre>
+	<pre>          <input type="button" onclick="kuangre()" value="建造一个
+狂热者
+（100晶体）"/>                 <input type="button" onclick="zhuilie()" value="建造一个
+追猎者
+（125晶体+50瓦斯）"/></pre>
+	</br>
+	</br>
+    </body>
